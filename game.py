@@ -3,7 +3,7 @@ import random
 pygame.init()
 
 screen = pygame.display.set_mode((800, 600))
-pygame.display.set_caption("Laser Escape")
+pygame.display.set_caption("Space Game")
 
 
 player_img = pygame.image.load("player.png")
