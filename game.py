@@ -70,6 +70,10 @@ while run:
                     points.append([x, y])
                 game_over = False
 
+    if game_over:
+        laser_width = False
+        laser_height = False
+
     
     if not game_over:
 
