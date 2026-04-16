@@ -57,9 +57,9 @@ while run:
             if event.key == pygame.K_r and game_over:
                 player_x = 100
                 player_y = 250
-                score = 0
                 lasers = []
                 for i in range(5):
+                    
                     laser_x = random.randint(800, 1200)
                     laser_y = random.randint(0, 550)
                     lasers.append([laser_x, laser_y])
@@ -68,11 +68,9 @@ while run:
                     x = random.randint(800, 1200)
                     y = random.randint(0, 550)
                     points.append([x, y])
+                score = 0
                 game_over = False
-
-    if game_over:
-        laser_width = False
-        laser_height = False
+               
 
     
     if not game_over:
@@ -134,17 +132,13 @@ while run:
     screen.blit(player_img, (player_x, player_y))
 
     for point in points:
-        
         if game_over:
             points.remove(point)
-            
         screen.blit(point_img, (point[0], point[1]))
 
     for laser in lasers:
-        
         if game_over:
             lasers.remove(laser)
-            
         pygame.draw.rect(screen, (255, 0, 0), (laser[0], laser[1], laser_width, laser_height))
 
     score_text = font.render("Score: " + str(score), True, (255, 250, 250))
